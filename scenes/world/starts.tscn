@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="menu" type="Control"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 322.0
+margin_bottom = 182.0

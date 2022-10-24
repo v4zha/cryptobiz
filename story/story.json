@@ -1,0 +1,54 @@
+{
+    "ramu_meet": [
+        {
+            "character": "Damu",
+            "dialogue": "Aa Ramu, Kanditt Kurach aayallo"
+        },
+        {
+            "character": "Ramu",
+            "dialogue": "Enthu Cheyyana Damu, Vellam Kayari Krishi yokke nashichu"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "Nee arinjo Kendra sarkarinte puthiya Padhathiye patti !"
+        },
+        {
+            "character": "Ramu",
+            "dialogue": "Illa Damu, Athentha ?"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "Oru rahasya number bankil poyi paranjal Cash kittum"
+        },
+        {
+            "character": "Ramu",
+            "dialogue": "Ennal Number parayu Damu"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "A radeesh varunnathinu mumbu parayam,allel avan a number kettitt bankil ninn cash edukkum"
+        }
+    ],
+    "radeesh_arrival": [
+        {
+            "character": "Radeesh",
+            "dialogue": "Hehe , Nyan Ningal Parayunnath ellam kettu"
+        },
+        {
+            "character": "Radeesh",
+            "dialogue": "Ini ningal Number paranjal nyan athu kelkum..Ha..Ha..Ha"
+        },
+        {
+            "character": "Ramu",
+            "dialogue": "Ayyo ini nthu cheyyum"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "Vishamikkanda Ramu, nthelum vazhi kandupidikkam"
+        },
+        {
+            "character": "Radeesh",
+            "dialogue": "Onnum Nadakkan pokunilla, Hehe...He.He.He"
+        }
+    ]
+}

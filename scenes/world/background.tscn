@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/background/Layer_0000_9.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/Layer_0002_7.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/Layer_0005_5.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/Layer_0006_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/Layer_0007_Lights.png" type="Texture" id=5]
+[ext_resource path="res://assets/background/Layer_0008_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/background/Layer_0010_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/background/Layer_0011_0.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/Layer_0001_8.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/Layer_0003_6.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/Layer_0004_Lights.png" type="Texture" id=11]
+[ext_resource path="res://assets/background/Layer_0009_2.png" type="Texture" id=12]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 322, 119 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="background" type="Node2D" parent="."]
+scale = Vector2( 0.59, 0.55 )
+
+[node name="g11" type="ParallaxBackground" parent="background"]
+
+[node name="gl11" type="ParallaxLayer" parent="background/g11"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs11" type="Sprite" parent="background/g11/gl11"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 8 )
+
+[node name="g10" type="ParallaxBackground" parent="background"]
+
+[node name="gl10" type="ParallaxLayer" parent="background/g10"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs10" type="Sprite" parent="background/g10/gl10"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 7 )
+
+[node name="g9" type="ParallaxBackground" parent="background"]
+
+[node name="gl9" type="ParallaxLayer" parent="background/g9"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs9" type="Sprite" parent="background/g9/gl9"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 12 )
+
+[node name="g8" type="ParallaxBackground" parent="background"]
+
+[node name="gl8" type="ParallaxLayer" parent="background/g8"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs8" type="Sprite" parent="background/g8/gl8"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 6 )
+
+[node name="g7" type="ParallaxBackground" parent="background"]
+
+[node name="gl7" type="ParallaxLayer" parent="background/g7"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs7" type="Sprite" parent="background/g7/gl7"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 5 )
+
+[node name="g6" type="ParallaxBackground" parent="background"]
+
+[node name="gl6" type="ParallaxLayer" parent="background/g6"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs6" type="Sprite" parent="background/g6/gl6"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 4 )
+
+[node name="g5" type="ParallaxBackground" parent="background"]
+
+[node name="gl5" type="ParallaxLayer" parent="background/g5"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs5" type="Sprite" parent="background/g5/gl5"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 3 )
+
+[node name="g4" type="ParallaxBackground" parent="background"]
+
+[node name="gl4" type="ParallaxLayer" parent="background/g4"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs4" type="Sprite" parent="background/g4/gl4"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 11 )
+
+[node name="g3" type="ParallaxBackground" parent="background"]
+
+[node name="gl3" type="ParallaxLayer" parent="background/g3"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs3" type="Sprite" parent="background/g3/gl3"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 10 )
+
+[node name="g2" type="ParallaxBackground" parent="background"]
+
+[node name="gl2" type="ParallaxLayer" parent="background/g2"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs2" type="Sprite" parent="background/g2/gl2"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 2 )
+
+[node name="g1" type="ParallaxBackground" parent="background"]
+
+[node name="gl1" type="ParallaxLayer" parent="background/g1"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs1" type="Sprite" parent="background/g1/gl1"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 9 )
+
+[node name="g0" type="ParallaxBackground" parent="background"]
+
+[node name="gl0" type="ParallaxLayer" parent="background/g0"]
+position = Vector2( 160, 60 )
+scale = Vector2( 0.59, 0.55 )
+
+[node name="gs0" type="Sprite" parent="background/g0/gl0"]
+scale = Vector2( 0.59, 0.55 )
+texture = ExtResource( 1 )

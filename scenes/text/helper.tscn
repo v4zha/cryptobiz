@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Helper" type="RichTextLabel"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 192.0
+margin_bottom = 29.0
+theme = SubResource( 1 )
