@@ -12,6 +12,8 @@ public class Radeesh : KinematicBody2D
 
     private PlayerPos pos { get; set; } = PlayerPos.Up;
 
+    private bool ConvoStatus = false;
+
     public Vector2 transformVec { get; private set; } = new Vector2();
     // (Start,End)
     public Queue<(PlayerPos, Vector2)> CurTransform = new Queue<(PlayerPos, Vector2)>();

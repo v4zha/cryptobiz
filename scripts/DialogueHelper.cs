@@ -48,6 +48,7 @@ public class DialogueHelper : RichTextLabel
         dialogueCounter = 0;
         gb = GetNode<Globals>("/root/Globals");
         setDialogues();
+        getDialogue();
     }
     public override void _Process(float delta)
     {
