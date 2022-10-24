@@ -11,6 +11,8 @@ This game is created to provide slight insights of basic cryptographic topics  t
 
 # Installation
 Download release packages for respective OS from [releases](https://github.com/v4zha/cryptobiz/releases)<br>
+OR 
+try the wasm version online [cryptobiz](https://v4zha.github.io/cryptobiz)
 # Todo
 - fix Interactions
 - More visually pleasing
