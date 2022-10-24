@@ -7,6 +7,7 @@ public class Ramu : KinematicBody2D
     private RichTextLabel DialogueHelper;
     private bool InteractArea = false;
     private Globals gb;
+    private Timer timer;
     public void OnDetectionBodyEntered(Node Body)
     {
         if (Body.Name.Equals("Damu") && gb.CurSceneNo == 0)
@@ -31,6 +32,22 @@ public class Ramu : KinematicBody2D
             GD.Print(err);
         }
     }
+
+    public void OnTimerTimeout()
+    {
+        GD.Print("Stoping Timer, adding Radeesh");
+        PackedScene RadeeshScene = (PackedScene)GD.Load("res://scenes/chars/Radeesh.tscn");
+        KinematicBody2D radeesh = (KinematicBody2D)RadeeshScene.Instance();
+        GetParent().AddChild(radeesh);
+        this.RemoveChild(timer);
+    }
+
+    public void OnDialogueConvoOver()
+    {
+        GD.Print("Convo Over,Adding Radeesh");
+        timer.Start();
+
+    }
     public override void _Ready()
     {
         gb = GetNode<Globals>("/root/Globals");
@@ -39,8 +56,13 @@ public class Ramu : KinematicBody2D
         HelperTxt = (RichTextLabel)HelperScene.Instance();
         DialogueHelper = (RichTextLabel)DialogueScene.Instance();
         HelperTxt.AddText("Press ENTER to interact");
-
+        timer = new Timer();
+        AddChild(timer);
+        timer.WaitTime = 1;
+        timer.Autostart = false;
+        timer.Connect("timeout", this, "OnTimerTimeout");
     }
+
     public override void _Process(float delta)
     {
         if (Input.IsActionJustPressed("ui_accept") && InteractArea && gb.CurSceneNo == 0)
@@ -52,10 +74,6 @@ public class Ramu : KinematicBody2D
                 {
                     RemoveChild(HelperTxt);
                 }
-                // if (!GetParent().IsAParentOf(DialogueHelper))
-                // {
-                //     GetParent().AddChild(DialogueHelper);
-                // }
                 if (!IsAParentOf(DialogueHelper))
                 {
                     AddChild(DialogueHelper);
@@ -67,6 +85,7 @@ public class Ramu : KinematicBody2D
                 GD.Print(err);
             }
         }
+
     }
 
 }

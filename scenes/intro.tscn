@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/chars/Damu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset/TX Tileset Grass.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/world/objects/bush.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/chars/Ramu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Globals.cs" type="Script" id=9]
+[ext_resource path="res://scenes/text/dialogue.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Tileset Grass.png 0"
@@ -424,7 +425,7 @@ tile_data = PoolIntArray( -458762, 1, 0, -458761, 0, 0, -458760, 0, 0, -458759, 
 position = Vector2( 36, -116 )
 
 [node name="Damu" parent="." instance=ExtResource( 1 )]
-position = Vector2( 84, 215 )
+position = Vector2( 69.5109, 188.092 )
 
 [node name="rock2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 235, 198 )
@@ -436,6 +437,7 @@ position = Vector2( 132, 148 )
 position = Vector2( -2, -4 )
 
 [node name="tree" parent="YSort" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( -99, 9 )
 
 [node name="rock" parent="." instance=ExtResource( 4 )]
@@ -461,3 +463,8 @@ position = Vector2( 109, 53 )
 
 [node name="Ramu" parent="." instance=ExtResource( 8 )]
 position = Vector2( 15, 127 )
+
+[node name="dialogue" parent="Ramu" instance=ExtResource( 10 )]
+visible = false
+
+[connection signal="ConvoOver" from="Ramu/dialogue" to="Ramu" method="OnDialogueConvoOver"]

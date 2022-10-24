@@ -1,13 +1,13 @@
 using Godot;
 
-enum PlayerPos
+public enum PlayerPos
 {
     Left,
     Right,
     Up,
     Down,
 }
-enum AnimState
+public enum AnimState
 {
     Idle,
     Run,

@@ -9,6 +9,9 @@ public class Dialogue
 }
 public class DialogueHelper : RichTextLabel
 {
+
+    [Signal]
+    public delegate void ConvoOver();
     public Globals gb { get; set; }
     public List<Dialogue> dialogues { get; set; }
     public int dialogueCounter { get; set; }
@@ -30,6 +33,7 @@ public class DialogueHelper : RichTextLabel
             gb.SceneComplete = true;
             gb.ConvoStatus = false;
             gb.CurSceneNo++;
+            EmitSignal("ConvoOver");
             GetParent().RemoveChild(this);
         }
         else
