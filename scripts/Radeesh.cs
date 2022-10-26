@@ -12,17 +12,28 @@ public class Radeesh : KinematicBody2D
 
     private PlayerPos pos { get; set; } = PlayerPos.Up;
 
-    private bool ConvoStatus = false;
-
+    private DialogueHelper dialogueHelper;
     public Vector2 transformVec { get; private set; } = new Vector2();
     // (Start,End)
     public Queue<(PlayerPos, Vector2)> CurTransform = new Queue<(PlayerPos, Vector2)>();
 
+    private Globals gb;
     public override void _Ready()
     {
         CurTransform.Enqueue((PlayerPos.Down, new Vector2(0, 98)));
         CurTransform.Enqueue((PlayerPos.Left, new Vector2(-35, 92)));
-        GD.Print("Queue Length : ", CurTransform.Count);
+        PackedScene DialogueScene = (PackedScene)GD.Load("res://scenes/text/dialogue.tscn");
+        dialogueHelper = (DialogueHelper)DialogueScene.Instance();
+    }
+    public void OnDialogueConvoOver()
+    {
+        gb.SceneComplete = true;
+        gb.ConvoStatus = false;
+        if (gb.CurSceneNo == 1)
+        {
+            gb.CurSceneNo++;
+        }
+        GD.Print("Radeesh Convo Over");
     }
     bool CheckTransform()
     {
@@ -71,13 +82,24 @@ public class Radeesh : KinematicBody2D
     {
         AnimatedSprite sprite = (AnimatedSprite)GetNode("AnimatedSprite");
         Vector2 input = Vector2.Zero;
+
         if (CurTransform.Count > 0)
         {
             input = getInputVec(CurTransform.Peek().Item1);
         }
+        else
+        {
+            if (transformVec == Vector2.Zero)
+            {
+                if (!IsAParentOf(dialogueHelper))
+                {
+                    AddChild(dialogueHelper);
+                    dialogueHelper.Connect("ConvoOver", this, "OnDialogueConvoOver");
+                }
+            }
+        }
         if (CurTransform.Count > 0 && CheckTransform())
         {
-            GD.Print($"Moving Player Position : ({GlobalPosition.x},{GlobalPosition.y}) // ({CurTransform.Peek().Item2.x},{CurTransform.Peek().Item2.y})");
             if (input.y < 0)
             {
                 pos = PlayerPos.Up;

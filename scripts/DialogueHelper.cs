@@ -22,6 +22,7 @@ public class DialogueHelper : RichTextLabel
         file.Open("res://story/story.json", File.ModeFlags.Read);
         string jsn = file.GetAsText();
         Dictionary<string, List<Dialogue>> allDiags = JsonConvert.DeserializeObject<Dictionary<string, List<Dialogue>>>(jsn);
+        GD.Print($" Cur scene no : {gb.CurSceneNo}\n Scene List : {gb.SceneList[gb.CurSceneNo]}");
         dialogues = allDiags[gb.SceneList[gb.CurSceneNo]];
         maxDiags = dialogues.Count;
     }
@@ -30,9 +31,7 @@ public class DialogueHelper : RichTextLabel
         if (dialogueCounter >= maxDiags)
         {
             dialogueCounter = 0;
-            gb.SceneComplete = true;
             gb.ConvoStatus = false;
-            gb.CurSceneNo++;
             EmitSignal("ConvoOver");
             GetParent().RemoveChild(this);
         }

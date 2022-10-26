@@ -50,5 +50,23 @@
             "character": "Radeesh",
             "dialogue": "Onnum Nadakkan pokunilla, Hehe...He.He.He"
         }
+    ],
+    "df_key": [
+        {
+            "character": "Damu",
+            "dialogue": "Aha..Oru vazhi undu Damu ,Namukk DH Key Exchange try cheythu nokkam"
+        },
+        {
+            "character": "Ramu",
+            "dialogue": "Aa Damu athu,Nokkam .Redeeshee ini nee engane aa number kandu pidikkum "
+        },
+        {
+            "character": "Damu",
+            "dialogue": ""
+        },
+        {
+            "character": "Ramu",
+            "dialogue": ""
+        }
     ]
 }

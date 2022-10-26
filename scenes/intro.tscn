@@ -437,7 +437,6 @@ position = Vector2( 132, 148 )
 position = Vector2( -2, -4 )
 
 [node name="tree" parent="YSort" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( -99, 9 )
 
 [node name="rock" parent="." instance=ExtResource( 4 )]

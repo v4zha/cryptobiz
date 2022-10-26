@@ -7,7 +7,7 @@ public class Globals : Node
     [Export]
     public bool SceneComplete { get; set; } = false;
     [Export]
-    public string[] SceneList { get; set; } = { "ramu_meet", "radeesh_arrival" };
+    public string[] SceneList { get; set; } = { "ramu_meet", "radeesh_arrival", "df_key" };
     [Export]
     public bool ConvoStatus { get; set; } = false;
 }

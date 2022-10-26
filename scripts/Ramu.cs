@@ -4,7 +4,7 @@ using System;
 public class Ramu : KinematicBody2D
 {
     private RichTextLabel HelperTxt;
-    private RichTextLabel DialogueHelper;
+    private DialogueHelper dialogueHelper;
     private bool InteractArea = false;
     private Globals gb;
     private Timer timer;
@@ -44,6 +44,12 @@ public class Ramu : KinematicBody2D
 
     public void OnDialogueConvoOver()
     {
+        gb.SceneComplete = true;
+        gb.ConvoStatus = false;
+        if (gb.CurSceneNo == 0)
+        {
+            gb.CurSceneNo++;
+        }
         GD.Print("Convo Over,Adding Radeesh");
         timer.Start();
 
@@ -54,7 +60,7 @@ public class Ramu : KinematicBody2D
         PackedScene HelperScene = (PackedScene)GD.Load("res://scenes/text/helper.tscn");
         PackedScene DialogueScene = (PackedScene)GD.Load("res://scenes/text/dialogue.tscn");
         HelperTxt = (RichTextLabel)HelperScene.Instance();
-        DialogueHelper = (RichTextLabel)DialogueScene.Instance();
+        dialogueHelper = (DialogueHelper)DialogueScene.Instance();
         HelperTxt.AddText("Press ENTER to interact");
         timer = new Timer();
         AddChild(timer);
@@ -74,9 +80,11 @@ public class Ramu : KinematicBody2D
                 {
                     RemoveChild(HelperTxt);
                 }
-                if (!IsAParentOf(DialogueHelper))
+                if (!IsAParentOf(dialogueHelper))
                 {
-                    AddChild(DialogueHelper);
+                    AddChild(dialogueHelper);
+                dialogueHelper.Connect("ConvoOver",this,"OnConvoDialogueOver");
+                    InteractArea = false;
                 }
             }
             catch (Exception err)
