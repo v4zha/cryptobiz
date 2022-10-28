@@ -22,11 +22,8 @@ public class Ramu : KinematicBody2D
     private bool interactArea { get; set; }
     public void OnDetectionBodyEntered(Node Body)
     {
-        GD.Print("Body entered detecting ");
-        GD.Print("CrSceneNo : ", gb.CurSceneNo);
         if (Body.Name.Equals("Damu") && (gb.CurSceneNo == 0 || gb.CurSceneNo == 2))
         {
-            GD.Print("Add HelperText");
             if (!IsAParentOf(HelperTxt))
             {
                 AddChild(HelperTxt);
