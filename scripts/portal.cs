@@ -23,7 +23,7 @@ public class portal : StaticBody2D
                 HelperTxt.SetPosition(new Vector2(15, 15));
                 AddChild(HelperTxt);
                 // HelperTxt.Text = "Press ENTER to Enter Secret Number";
-                HelperTxt.Text = "<>";
+                HelperTxt.Text = "<.>";
                 interactArea = true;
             }
         }
