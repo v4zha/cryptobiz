@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/DialogueHelper.cs" type="Script" id=1]
+[ext_resource path="res://assets/fonts/FiraCode-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="dialogue" type="RichTextLabel"]
 anchor_top = 0.073
@@ -9,6 +16,7 @@ margin_left = -91.0
 margin_top = 19.86
 margin_right = 174.0
 margin_bottom = 55.86
+custom_fonts/normal_font = SubResource( 1 )
 meta_underlined = false
 fit_content_height = true
 script = ExtResource( 1 )
