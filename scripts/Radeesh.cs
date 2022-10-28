@@ -20,12 +20,13 @@ public class Radeesh : KinematicBody2D
     private Globals gb;
     public override void _Ready()
     {
+        gb = GetNode<Globals>("/root/Globals");
         CurTransform.Enqueue((PlayerPos.Down, new Vector2(0, 98)));
-        CurTransform.Enqueue((PlayerPos.Left, new Vector2(-35, 92)));
+        CurTransform.Enqueue((PlayerPos.Left, new Vector2(-5, 92)));
         PackedScene DialogueScene = (PackedScene)GD.Load("res://scenes/text/dialogue.tscn");
         dialogueHelper = (DialogueHelper)DialogueScene.Instance();
     }
-    public void OnDialogueConvoOver()
+    public void OnDiagConvoOver()
     {
         gb.SceneComplete = true;
         gb.ConvoStatus = false;
@@ -34,6 +35,14 @@ public class Radeesh : KinematicBody2D
             gb.CurSceneNo++;
         }
         GD.Print("Radeesh Convo Over");
+        if (IsAParentOf(dialogueHelper))
+        {
+            if (dialogueHelper.IsConnected("ConvoOver", this, "OnDiagConvoOver"))
+            {
+                dialogueHelper.Disconnect("ConvoOver", this, "OnDiagConvoOver");
+            }
+            RemoveChild(dialogueHelper);
+        }
     }
     bool CheckTransform()
     {
@@ -91,10 +100,14 @@ public class Radeesh : KinematicBody2D
         {
             if (transformVec == Vector2.Zero)
             {
-                if (!IsAParentOf(dialogueHelper))
+                if (!IsAParentOf(dialogueHelper) && gb.CurSceneNo == 1)
                 {
                     AddChild(dialogueHelper);
-                    dialogueHelper.Connect("ConvoOver", this, "OnDialogueConvoOver");
+                    if (!dialogueHelper.IsConnected("ConvoOver", this, "OnDiagConvoOver"))
+                    {
+                        dialogueHelper.Connect("ConvoOver", this, "OnDiagConvoOver");
+                        GD.Print("Connected to Dialogue Convo");
+                    }
                 }
             }
         }

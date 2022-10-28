@@ -33,7 +33,6 @@ public class DialogueHelper : RichTextLabel
             dialogueCounter = 0;
             gb.ConvoStatus = false;
             EmitSignal("ConvoOver");
-            GetParent().RemoveChild(this);
         }
         else
         {

@@ -51,6 +51,8 @@ public class Ramu : KinematicBody2D
             gb.CurSceneNo++;
         }
         GD.Print("Convo Over,Adding Radeesh");
+        dialogueHelper.Disconnect("ConvoOver", this, "OnDialogueConvoOver");
+        RemoveChild(dialogueHelper);
         timer.Start();
 
     }
@@ -83,7 +85,7 @@ public class Ramu : KinematicBody2D
                 if (!IsAParentOf(dialogueHelper))
                 {
                     AddChild(dialogueHelper);
-                dialogueHelper.Connect("ConvoOver",this,"OnConvoDialogueOver");
+                    dialogueHelper.Connect("ConvoOver", this, "OnDialogueConvoOver");
                     InteractArea = false;
                 }
             }

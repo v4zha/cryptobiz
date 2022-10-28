@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/chars/Damu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset/TX Tileset Grass.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://scenes/world/objects/bush.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/chars/Ramu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Globals.cs" type="Script" id=9]
-[ext_resource path="res://scenes/text/dialogue.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Tileset Grass.png 0"
@@ -462,8 +461,3 @@ position = Vector2( 109, 53 )
 
 [node name="Ramu" parent="." instance=ExtResource( 8 )]
 position = Vector2( 15, 127 )
-
-[node name="dialogue" parent="Ramu" instance=ExtResource( 10 )]
-visible = false
-
-[connection signal="ConvoOver" from="Ramu/dialogue" to="Ramu" method="OnDialogueConvoOver"]

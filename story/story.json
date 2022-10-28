@@ -62,11 +62,27 @@
         },
         {
             "character": "Damu",
-            "dialogue": ""
+            "dialogue": "Namukk p = 23 and g=5 akkam Ramu"
         },
         {
             "character": "Ramu",
-            "dialogue": ""
+            "dialogue": "Ok Damu, Ente Public number itha 17"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "Ok Ramu, Ente Public number 16 aa"
+        },
+        {
+            "character": "Damu",
+            "dialogue": "Kittiya Shared secret * 20 +12 aan aa Bankilekulla Secret Number"
+        },
+        {
+            "character": "Radeesh",
+            "dialogue": "Ningal enth Thengaya ee parayunne.Enikk onnum manasilkunilla"
+        },
+        {
+            "character": "Radeesh",
+            "dialogue": "Nyan Pokunnu.Sad"
         }
     ]
 }
