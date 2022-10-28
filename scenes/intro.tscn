@@ -438,6 +438,12 @@ position = Vector2( -2, -4 )
 [node name="tree" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -99, 9 )
 
+[node name="statue2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -102, -68 )
+
+[node name="statue" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -68 )
+
 [node name="rock" parent="." instance=ExtResource( 4 )]
 position = Vector2( -86, 126 )
 
@@ -446,12 +452,6 @@ position = Vector2( -86, 126 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bounds"]
 visible = false
 polygon = PoolVector2Array( -98, 27, 308, 28, 309, 246, 264, 261, -100, 259, -99, 30, -100, 5, -145, 6, -141, 287, 331, 288, 331, 3, -99, 4 )
-
-[node name="statue2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -102, -68 )
-
-[node name="statue" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, -68 )
 
 [node name="bush" parent="." instance=ExtResource( 7 )]
 position = Vector2( 61, 17 )

@@ -34,7 +34,6 @@ public class Radeesh : KinematicBody2D
         {
             gb.CurSceneNo++;
         }
-        GD.Print("Radeesh Convo Over");
         if (IsAParentOf(dialogueHelper))
         {
             if (dialogueHelper.IsConnected("ConvoOver", this, "OnDiagConvoOver"))
@@ -106,7 +105,6 @@ public class Radeesh : KinematicBody2D
                     if (!dialogueHelper.IsConnected("ConvoOver", this, "OnDiagConvoOver"))
                     {
                         dialogueHelper.Connect("ConvoOver", this, "OnDiagConvoOver");
-                        GD.Print("Connected to Dialogue Convo");
                     }
                 }
             }

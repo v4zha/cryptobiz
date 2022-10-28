@@ -17,6 +17,7 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 0, -8 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 138.0 ],
 "_edit_vertical_guides_": [ 164.0 ]

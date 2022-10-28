@@ -16,14 +16,14 @@ public class DialogueHelper : RichTextLabel
     public List<Dialogue> dialogues { get; set; }
     public int dialogueCounter { get; set; }
     public int maxDiags { get; set; }
-    void setDialogues()
+    public void setDialogues()
     {
         File file = new File();
         file.Open("res://story/story.json", File.ModeFlags.Read);
         string jsn = file.GetAsText();
         Dictionary<string, List<Dialogue>> allDiags = JsonConvert.DeserializeObject<Dictionary<string, List<Dialogue>>>(jsn);
-        GD.Print($" Cur scene no : {gb.CurSceneNo}\n Scene List : {gb.SceneList[gb.CurSceneNo]}");
         dialogues = allDiags[gb.SceneList[gb.CurSceneNo]];
+        GD.Print(gb.SceneList[gb.CurSceneNo]);
         maxDiags = dialogues.Count;
     }
     void getDialogue()
